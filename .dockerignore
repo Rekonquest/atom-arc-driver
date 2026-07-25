@@ -1,0 +1,9 @@
+.git
+target
+vm/runtime
+vm/__pycache__
+*.pyc
+*.qcow2
+*.iso
+*.tar.gz
+*.log

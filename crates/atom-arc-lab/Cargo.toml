@@ -1,0 +1,14 @@
+[package]
+name = "atom-arc-lab"
+description = "Phase and significance gates for Atom Arc silicon experiments"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

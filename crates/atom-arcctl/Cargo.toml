@@ -1,0 +1,25 @@
+[package]
+name = "atom-arcctl"
+description = "Atom Arc diagnostics and validation command line"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "atom-arcctl"
+path = "src/main.rs"
+
+[dependencies]
+atom-arc-dxcore = { path = "../atom-arc-dxcore" }
+atom-arc-lab = { path = "../atom-arc-lab" }
+atom-arc-model = { path = "../atom-arc-model" }
+atom-arc-platform = { path = "../atom-arc-platform" }
+atom-arc-runtime = { path = "../atom-arc-runtime" }
+atom-arc-security = { path = "../atom-arc-security" }
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

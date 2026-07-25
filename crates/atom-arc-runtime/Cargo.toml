@@ -1,0 +1,19 @@
+[package]
+name = "atom-arc-runtime"
+description = "Memory, validation, and reference execution runtime for Atom Arc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+atom-arc-core = { path = "../atom-arc-core" }
+atom-arc-dxcore = { path = "../atom-arc-dxcore" }
+atom-arc-model = { path = "../atom-arc-model" }
+atom-arc-platform = { path = "../atom-arc-platform" }
+atom-arc-security = { path = "../atom-arc-security" }
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,316 @@
+{
+  "spec": {
+    "id": "phase1-third-lane-268435456-3",
+    "phase": "host-to-vram-on-ramp",
+    "domain": "storage-io",
+    "primitive": "third-lane-preload",
+    "baseline_stack": [
+      "secure-bring-up",
+      "reusable-staging-buffer-pool",
+      "double-buffered-preload"
+    ],
+    "candidate_stack": [
+      "secure-bring-up",
+      "reusable-staging-buffer-pool",
+      "double-buffered-preload",
+      "third-lane-preload"
+    ],
+    "hypothesis": "one additional persistent storage-style queue lane lets CPU preparation and verification run farther ahead without changing the single GPU queue or firmware authority",
+    "minimum_samples": 20,
+    "minimum_mean_improvement_percent": 10.0,
+    "maximum_p95_latency_regression_percent": 5.0
+  },
+  "evidence": {
+    "kind": "live-hardware-feasibility",
+    "physical_device": true,
+    "backend": "wsl-dxcore-d3d12",
+    "driver_under_test": "signed-windows-driver-gpu-pv",
+    "vendor_id": 32902,
+    "device_id": 22181,
+    "run_id": "wsl-dxcore-a380-third-lane-268435456-3-20-1784147187"
+  },
+  "baseline": [
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1249797426,
+      "correctness_digest": "fnv64-429fa6c7a39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1143394481,
+      "correctness_digest": "fnv64-e6a9df9ac39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1144433189,
+      "correctness_digest": "fnv64-bae8c468b39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1149861458,
+      "correctness_digest": "fnv64-07fba477239d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1146444245,
+      "correctness_digest": "fnv64-e07b1ee7839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1145248679,
+      "correctness_digest": "fnv64-882e6884e39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1145246311,
+      "correctness_digest": "fnv64-443284be139d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1152995914,
+      "correctness_digest": "fnv64-dea26f2c839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1152779467,
+      "correctness_digest": "fnv64-807cc1ee839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1175215024,
+      "correctness_digest": "fnv64-0e5214b4239d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1246164661,
+      "correctness_digest": "fnv64-67c1b240339d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148587125,
+      "correctness_digest": "fnv64-a5389d19039d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148791926,
+      "correctness_digest": "fnv64-aa2b1c66439d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150710535,
+      "correctness_digest": "fnv64-5bcda551639d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148257667,
+      "correctness_digest": "fnv64-b62d5231739d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1160738961,
+      "correctness_digest": "fnv64-e1f7b0d5a39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148669077,
+      "correctness_digest": "fnv64-aa1eaecca39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1146767817,
+      "correctness_digest": "fnv64-4217301a639d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1146218324,
+      "correctness_digest": "fnv64-74d1b2dcd39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150278575,
+      "correctness_digest": "fnv64-2f8ec981839d0383",
+      "error": null
+    }
+  ],
+  "candidate": [
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1234651005,
+      "correctness_digest": "fnv64-429fa6c7a39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1142834606,
+      "correctness_digest": "fnv64-e6a9df9ac39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1149321481,
+      "correctness_digest": "fnv64-bae8c468b39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1146639521,
+      "correctness_digest": "fnv64-07fba477239d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1147862565,
+      "correctness_digest": "fnv64-e07b1ee7839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148316711,
+      "correctness_digest": "fnv64-882e6884e39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150722501,
+      "correctness_digest": "fnv64-443284be139d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148570458,
+      "correctness_digest": "fnv64-dea26f2c839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1151450581,
+      "correctness_digest": "fnv64-807cc1ee839d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150012937,
+      "correctness_digest": "fnv64-0e5214b4239d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1248921057,
+      "correctness_digest": "fnv64-67c1b240339d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1205219095,
+      "correctness_digest": "fnv64-a5389d19039d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150704928,
+      "correctness_digest": "fnv64-aa2b1c66439d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1153776713,
+      "correctness_digest": "fnv64-5bcda551639d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1148237631,
+      "correctness_digest": "fnv64-b62d5231739d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1150405973,
+      "correctness_digest": "fnv64-e1f7b0d5a39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1152049523,
+      "correctness_digest": "fnv64-aa1eaecca39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1147727323,
+      "correctness_digest": "fnv64-4217301a639d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1145295191,
+      "correctness_digest": "fnv64-74d1b2dcd39d0383",
+      "error": null
+    },
+    {
+      "bytes": 805306368,
+      "operations": 3,
+      "duration_ns": 1146762006,
+      "correctness_digest": "fnv64-2f8ec981839d0383",
+      "error": null
+    }
+  ]
+}

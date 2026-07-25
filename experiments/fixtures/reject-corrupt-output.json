@@ -1,0 +1,47 @@
+{
+  "spec": {
+    "id": "phase1-corrupt-fixture",
+    "phase": "host-to-vram-on-ramp",
+    "domain": "storage-io",
+    "primitive": "unchecked-cut-through",
+    "baseline_stack": ["secure-bring-up"],
+    "candidate_stack": ["secure-bring-up", "unchecked-cut-through"],
+    "hypothesis": "forward chunks before full-buffer validation",
+    "minimum_samples": 10,
+    "minimum_mean_improvement_percent": 10.0,
+    "maximum_p95_latency_regression_percent": 5.0
+  },
+  "evidence": {
+    "kind": "synthetic-fixture",
+    "physical_device": false,
+    "backend": "",
+    "driver_under_test": "",
+    "vendor_id": null,
+    "device_id": null,
+    "run_id": ""
+  },
+  "baseline": [
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "a", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "b", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "c", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "d", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "e", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "f", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "g", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "h", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "i", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 1000, "correctness_digest": "j", "error": null }
+  ],
+  "candidate": [
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "a", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "b", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "c", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "CORRUPT", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "e", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "f", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "g", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "h", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "i", "error": null },
+    { "bytes": 4096, "operations": 1, "duration_ns": 700, "correctness_digest": "j", "error": null }
+  ]
+}

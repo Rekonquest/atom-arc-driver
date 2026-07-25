@@ -1,0 +1,29 @@
+{
+  "spec": {
+    "id": "phase1-invalid-reordered-stack",
+    "phase": "host-to-vram-on-ramp",
+    "domain": "spiderweb-fabric",
+    "primitive": "reusable-pinned-multilane-ring",
+    "baseline_stack": ["secure-bring-up", "cache-aligned-staging"],
+    "candidate_stack": [
+      "secure-bring-up",
+      "reusable-pinned-multilane-ring",
+      "cache-aligned-staging"
+    ],
+    "hypothesis": "a reordered primitive stack must never reuse baseline evidence",
+    "minimum_samples": 10,
+    "minimum_mean_improvement_percent": 10.0,
+    "maximum_p95_latency_regression_percent": 5.0
+  },
+  "evidence": {
+    "kind": "synthetic-fixture",
+    "physical_device": false,
+    "backend": "",
+    "driver_under_test": "",
+    "vendor_id": null,
+    "device_id": null,
+    "run_id": ""
+  },
+  "baseline": [],
+  "candidate": []
+}

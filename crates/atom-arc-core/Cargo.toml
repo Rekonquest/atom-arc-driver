@@ -1,0 +1,12 @@
+[package]
+name = "atom-arc-core"
+description = "no_std A380 hardware state and Atom OS kernel boundary for Atom Arc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+
+[lints]
+workspace = true

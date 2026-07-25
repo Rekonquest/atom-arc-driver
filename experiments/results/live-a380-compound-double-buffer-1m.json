@@ -1,0 +1,314 @@
+{
+  "spec": {
+    "id": "phase1-compound-double-buffer-1048576-16",
+    "phase": "host-to-vram-on-ramp",
+    "domain": "spiderweb-fabric",
+    "primitive": "double-buffered-preload",
+    "baseline_stack": [
+      "secure-bring-up",
+      "reusable-staging-buffer-pool"
+    ],
+    "candidate_stack": [
+      "secure-bring-up",
+      "reusable-staging-buffer-pool",
+      "double-buffered-preload"
+    ],
+    "hypothesis": "two persistent transfer lanes overlap preparation of the next payload with the current GPU copy without changing firmware authority",
+    "minimum_samples": 20,
+    "minimum_mean_improvement_percent": 10.0,
+    "maximum_p95_latency_regression_percent": 5.0
+  },
+  "evidence": {
+    "kind": "live-hardware-feasibility",
+    "physical_device": true,
+    "backend": "wsl-dxcore-d3d12",
+    "driver_under_test": "signed-windows-driver-gpu-pv",
+    "vendor_id": 32902,
+    "device_id": 22181,
+    "run_id": "wsl-dxcore-a380-compound-1048576-16-20-1784147580"
+  },
+  "baseline": [
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36034297,
+      "correctness_digest": "fnv64-e00b17a546fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 35890580,
+      "correctness_digest": "fnv64-e8b6df56011d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 34915064,
+      "correctness_digest": "fnv64-e749efa408fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36010644,
+      "correctness_digest": "fnv64-bcfc15ff7c9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36077617,
+      "correctness_digest": "fnv64-3f62c43656dd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37624690,
+      "correctness_digest": "fnv64-336676f0c5bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36786867,
+      "correctness_digest": "fnv64-5d5e30e1307d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36529764,
+      "correctness_digest": "fnv64-7ce4e01f45fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37540349,
+      "correctness_digest": "fnv64-f7b4282a83dd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 35273935,
+      "correctness_digest": "fnv64-e9499bece57d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 36144655,
+      "correctness_digest": "fnv64-b7c3559b673d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 38844776,
+      "correctness_digest": "fnv64-363838fd06bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37231384,
+      "correctness_digest": "fnv64-03eb5fe3947d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37650127,
+      "correctness_digest": "fnv64-00fda144aa9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 38648622,
+      "correctness_digest": "fnv64-9090f83a82bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37702812,
+      "correctness_digest": "fnv64-245d145e6add0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 35170038,
+      "correctness_digest": "fnv64-6798e8ab833d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 37040559,
+      "correctness_digest": "fnv64-eb4d696bf51d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 35129397,
+      "correctness_digest": "fnv64-9753bcc39e9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 35659327,
+      "correctness_digest": "fnv64-0ae969c172dd0383",
+      "error": null
+    }
+  ],
+  "candidate": [
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26681255,
+      "correctness_digest": "fnv64-e00b17a546fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26880516,
+      "correctness_digest": "fnv64-e8b6df56011d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26959965,
+      "correctness_digest": "fnv64-e749efa408fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26786833,
+      "correctness_digest": "fnv64-bcfc15ff7c9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 28019739,
+      "correctness_digest": "fnv64-3f62c43656dd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26805863,
+      "correctness_digest": "fnv64-336676f0c5bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 27582956,
+      "correctness_digest": "fnv64-5d5e30e1307d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 27448006,
+      "correctness_digest": "fnv64-7ce4e01f45fd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26949148,
+      "correctness_digest": "fnv64-f7b4282a83dd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26766831,
+      "correctness_digest": "fnv64-e9499bece57d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 29077166,
+      "correctness_digest": "fnv64-b7c3559b673d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 27276103,
+      "correctness_digest": "fnv64-363838fd06bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 28454918,
+      "correctness_digest": "fnv64-03eb5fe3947d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 27740838,
+      "correctness_digest": "fnv64-00fda144aa9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 28079118,
+      "correctness_digest": "fnv64-9090f83a82bd0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26569575,
+      "correctness_digest": "fnv64-245d145e6add0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 27902617,
+      "correctness_digest": "fnv64-6798e8ab833d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 34115742,
+      "correctness_digest": "fnv64-eb4d696bf51d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26670696,
+      "correctness_digest": "fnv64-9753bcc39e9d0383",
+      "error": null
+    },
+    {
+      "bytes": 16777216,
+      "operations": 16,
+      "duration_ns": 26599228,
+      "correctness_digest": "fnv64-0ae969c172dd0383",
+      "error": null
+    }
+  ]
+}

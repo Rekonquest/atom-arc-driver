@@ -1,0 +1,18 @@
+[package]
+name = "atom-arc-platform"
+description = "Windows, WSL, Docker, and native Xe platform probes for Atom Arc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+atom-arc-core = { path = "../atom-arc-core" }
+atom-arc-model = { path = "../atom-arc-model" }
+atom-arc-security = { path = "../atom-arc-security" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

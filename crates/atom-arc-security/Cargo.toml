@@ -1,0 +1,15 @@
+[package]
+name = "atom-arc-security"
+description = "Fail-closed security policy for Atom Arc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+atom-arc-model = { path = "../atom-arc-model" }
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

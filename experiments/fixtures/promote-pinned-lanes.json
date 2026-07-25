@@ -1,0 +1,47 @@
+{
+  "spec": {
+    "id": "phase1-pinned-lanes-fixture",
+    "phase": "host-to-vram-on-ramp",
+    "domain": "spiderweb-fabric",
+    "primitive": "reusable-pinned-multilane-ring",
+    "baseline_stack": ["secure-bring-up"],
+    "candidate_stack": ["secure-bring-up", "reusable-pinned-multilane-ring"],
+    "hypothesis": "persistent pinned lanes overlap staging and DMA",
+    "minimum_samples": 10,
+    "minimum_mean_improvement_percent": 10.0,
+    "maximum_p95_latency_regression_percent": 5.0
+  },
+  "evidence": {
+    "kind": "synthetic-fixture",
+    "physical_device": false,
+    "backend": "",
+    "driver_under_test": "",
+    "vendor_id": null,
+    "device_id": null,
+    "run_id": ""
+  },
+  "baseline": [
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1000000, "correctness_digest": "payload-0", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1001000, "correctness_digest": "payload-1", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1002000, "correctness_digest": "payload-2", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1003000, "correctness_digest": "payload-3", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1004000, "correctness_digest": "payload-4", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1005000, "correctness_digest": "payload-5", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1006000, "correctness_digest": "payload-6", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1007000, "correctness_digest": "payload-7", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1008000, "correctness_digest": "payload-8", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 1009000, "correctness_digest": "payload-9", "error": null }
+  ],
+  "candidate": [
+    { "bytes": 1048576, "operations": 1, "duration_ns": 800000, "correctness_digest": "payload-0", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 800800, "correctness_digest": "payload-1", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 801600, "correctness_digest": "payload-2", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 802400, "correctness_digest": "payload-3", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 803200, "correctness_digest": "payload-4", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 804000, "correctness_digest": "payload-5", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 804800, "correctness_digest": "payload-6", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 805600, "correctness_digest": "payload-7", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 806400, "correctness_digest": "payload-8", "error": null },
+    { "bytes": 1048576, "operations": 1, "duration_ns": 807200, "correctness_digest": "payload-9", "error": null }
+  ]
+}

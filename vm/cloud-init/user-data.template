@@ -1,0 +1,67 @@
+#cloud-config
+hostname: atom-arc-dev
+manage_etc_hosts: true
+
+users:
+  - default
+  - name: atomdev
+    gecos: Atom Arc Driver Developer
+    groups: [adm, sudo, kvm, render, video]
+    shell: /bin/bash
+    lock_passwd: true
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - __ATOM_VM_SSH_PUBLIC_KEY__
+
+ssh_pwauth: false
+disable_root: true
+package_update: true
+package_upgrade: false
+
+packages:
+  - bc
+  - bison
+  - build-essential
+  - clang
+  - cmake
+  - cpio
+  - curl
+  - dkms
+  - dwarves
+  - flex
+  - git
+  - jq
+  - kmod
+  - libdrm-dev
+  - libelf-dev
+  - libssl-dev
+  - libudev-dev
+  - linux-headers-generic
+  - linux-tools-generic
+  - llvm
+  - meson
+  - ninja-build
+  - pciutils
+  - pkg-config
+  - python3
+  - python3-venv
+  - rsync
+  - rustup
+
+write_files:
+  - path: /etc/motd
+    permissions: '0644'
+    content: |
+      Atom Arc Ubuntu development VM
+      This VM has a virtual QEMU display adapter, not physical Arc A380 PCI passthrough.
+  - path: /etc/modules-load.d/atom-arc.conf
+    permissions: '0644'
+    content: |
+      # Atom Arc modules will be listed here after a native Linux driver exists.
+
+runcmd:
+  - [runuser, -u, atomdev, --, rustup, default, stable]
+  - [install, -d, -o, atomdev, -g, atomdev, /home/atomdev/atom-arc-driver]
+  - [touch, /var/lib/atom-arc-vm-ready]
+
+final_message: "Atom Arc Ubuntu VM provisioned after $UPTIME seconds"

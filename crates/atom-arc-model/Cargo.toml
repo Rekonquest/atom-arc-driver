@@ -1,0 +1,15 @@
+[package]
+name = "atom-arc-model"
+description = "Validated command and device model for Atom Arc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+atom-arc-core = { path = "../atom-arc-core" }
+serde.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true
