@@ -128,3 +128,7 @@ Synthetic experiment fixtures never count as optimization evidence. Run
 Windows-driver GPU-PV fresh-versus-reusable staging-buffer matrix, then run
 `scripts\Test-AtomArcCompoundPrimitives.ps1` for the ordered reusable-pool plus
 double-buffered-preload comparison.
+
+## License
+
+Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE) (`PolyForm-Noncommercial-1.0.0`). Free for personal use, research, education, charities, public-good nonprofits, and government; commercial use is not permitted. This is source-available software, not OSI open source.
